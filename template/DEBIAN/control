@@ -1,0 +1,11 @@
+Package: libtensorflowlite
+Version: 2.4.1
+Section: libs
+Priority: optional
+Architecture: amd64
+Depends:
+Homepage: https://github.com/tensorflow/tensorflow/
+Maintainer: Albert Tomanek <albert.tomanek@gmail.com>
+Description: TensorFlow Lite packaged for application use.
+ Packaged for use with pkg-config (`tflite`) and Vala.
+ Contains C symbols only.

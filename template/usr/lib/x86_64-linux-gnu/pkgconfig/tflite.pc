@@ -1,0 +1,10 @@
+prefix=/usr
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: TensorFlow Lite, C API
+Description: Run pruned TensorFlow models as part of your application.
+Version: 2.4.1
+Requires: 
+Libs: -L${libdir} -ltensorflowlite_c
+Cflags: -I${includedir}/ 
