@@ -1,7 +1,9 @@
 #!/bin/sh
 
 # Clone repo
-git clone --depth 1 --branch v2.4.1 https://github.com/tensorflow/tensorflow/
+if [ ! -d "tensorflow/" ]; then
+	git clone --depth 1 --branch v2.4.1 https://github.com/tensorflow/tensorflow/
+fi
 
 # Build the binary
 ( cd tensorflow/ && bazel build //tensorflow/lite/c:libtensorflowlite_c.so -c opt)
