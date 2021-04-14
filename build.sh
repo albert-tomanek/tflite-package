@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Clone repo
-if [ -d "/app" ]; then
-	# We're building in flatpak-builder: we don't have network permissions and so we can't clone by ourselves.
+if [ ! -z ${FLATPAK_DEST} ];
+then
 	echo "We've detected that you're building this with flatpak-builder. Please add the folliwing as a source:"
 	echo "{\"type\": \"git\", \"tag\": \"v2.4.1\", \"url\": \"https://github.com/tensorflow/tensorflow.git\"}"
 else
