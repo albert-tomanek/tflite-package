@@ -1,13 +1,7 @@
 #!/bin/sh
 
 # Clone repo
-if [ ! -z ${FLATPAK_DEST} ];
-then
-	echo "We've detected that you're building this with flatpak-builder. Please add the folliwing as a source:"
-	echo "{\"type\": \"git\", \"tag\": \"v2.4.1\", \"url\": \"https://github.com/tensorflow/tensorflow.git\"}"
-else
-	git clone --depth 1 --branch v2.4.1 https://github.com/tensorflow/tensorflow/
-fi
+git clone --depth 1 --branch v2.4.1 https://github.com/tensorflow/tensorflow/
 
 # Build the binary
 ( cd tensorflow/ && bazel build //tensorflow/lite/c:libtensorflowlite_c.so -c opt)
