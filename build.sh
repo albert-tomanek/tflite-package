@@ -10,7 +10,7 @@ else
 fi
 
 # Build the binary
-( cd tensorflow/ && bazel build //tensorflow/lite/c:libtensorflowlite_c.so -c opts)
+( cd tensorflow/ && bazel build //tensorflow/lite/c:libtensorflowlite_c.so -c opt)
 
 # Take the necessary files and put them where they need to be within the package.
 rm -rf package/
