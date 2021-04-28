@@ -12,7 +12,7 @@ fi
 rm -rf package/
 cp -a template package
 
-mkdir -p package/usr/lib/x86_64-linux-gnu/
-cp tensorflow/bazel-bin/tensorflow/lite/c/libtensorflowlite_c.so package/usr/lib/x86_64-linux-gnu/
+mkdir -p package/usr/lib/
+cp tensorflow/bazel-bin/tensorflow/lite/c/libtensorflowlite_c.so package/usr/lib/
 mkdir -p package/usr/include/tensorflow/lite/c/
 cp tensorflow/tensorflow/lite/c/c_api.h tensorflow/tensorflow/lite/c/common.h package/usr/include/tensorflow/lite/c/
