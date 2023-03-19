@@ -111,6 +111,16 @@ namespace TFLite
 			get;
 		}
 
+		public int[] get_shape() {
+			int[] shape = new int[this.num_dims];
+
+			for (int i = 0; i < this.num_dims; i++) {
+				shape[i] = this.get_dim(i);
+			}
+
+			return shape;
+		}
+
 		[CCode(cname = "TfLiteTensorDim")]
 		public int32 get_dim(int32 index);
 
@@ -126,7 +136,7 @@ namespace TFLite
 		}
 
 		[CCode(cname = "TfLiteTensorCopyFromBuffer")]
-		public Status copy_from_buffer(uint8[] input_data);
+		public Status copy_from_buffer(void *input_data, size_t bytes);
 
 		[CCode(cname = "TfLiteTensorCopyToBuffer")]
 		public Status copy_to_buffer(void *dest, size_t bytes);
